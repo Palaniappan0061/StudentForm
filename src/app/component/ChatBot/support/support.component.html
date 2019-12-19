@@ -1,0 +1,19 @@
+<p>support works!</p>
+
+
+
+<div class="chatlist">
+    <ul class="list-group">
+        <div *ngFor="let message of message" [class.sender]="id == message.id" class="message">
+            <span>{{ message.info }}</span>
+            <time>{{ message.dt | date : 'shortTime' }}</time>
+          </div>
+          
+    </ul>
+  </div>
+
+
+
+
+<input name="message" type='text' [(ngModel)]='message'>
+<button (click)='send()'>Send</button>
